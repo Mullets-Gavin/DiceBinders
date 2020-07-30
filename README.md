@@ -17,6 +17,8 @@ You can [grab the Roblox model here](https://www.roblox.com/library/5462736550/D
 Over 20+ pre-installed UI Animations you can use for click events, mouse hovering, gradient designs, and more! Check out all of the animations in my test game here:
 https://www.roblox.com/games/5310533136/UI-Animations
 
+*You can change all the UI animations intensity by opening the module and changing the number value!*
+
 **Obby Actions:**
 To showcase my Binders module more, I included 3 Obby modules that you can use to assign tags to parts that kill a player, make the player shoot forward, or even hide the part the player jumps on!
 
