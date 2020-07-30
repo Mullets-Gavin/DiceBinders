@@ -5,7 +5,7 @@
 
 --[[
 [DOCUMENTATION]:
-	[todo: link]
+	https://github.com/Mullets-Gavin/DiceBinders
 	Listed below is a quick glance on the API, visit the link above for proper documentation
 	View the built-in UI animations in-game here to get a feel:
 	https://www.roblox.com/games/5310533136/UI-Animations
