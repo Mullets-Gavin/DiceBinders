@@ -43,13 +43,24 @@ Shutdown the module and disable all tags and disconnect all events.
 ```
 :ConnectEvents(specific,func) -- specific = object, func = function
 ```
-Connect an object in the first parameter to a tag function in the second parameter.
+Connect an object with the given tag that is a descendant of the `DataModel` to a tag function in the second parameter.  A tag function is the modules that are descendants of DiceBinders with the same name as the tag given that returns a function passed with the parameters of the object to fire and connect events.
+
+*Example:*
+```lua
+DiceBinders:ConnectEvents(workspace.Baseplate,function(object)
+	local event
+	event = object.Touched:Connect(function(hit)
+		print(hit.Name,'touched',object.Name,'!')
+	end)
+	return event
+end)
+```
 
 ### DiceBinders:DisconnectEvents
 ```
 :DisconnectEvents(specific) -- specific = object
 ```
-Disconnect all events tied to an object passed in the function.
+Disconnect all events tied to an object which was or is parented to the `DataModel`, passed in the function `:ConnectEvents`.
 
 ### DiceBinders:DisconnectAllEvents
 ```
