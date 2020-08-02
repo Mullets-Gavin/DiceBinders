@@ -10,7 +10,7 @@ Dice Binders is an elegant and easy solution to creating tag-based UI animations
 Dice Binders was created as an easy way to run code with tags. This handles everything you need and keeps the code nice and clean. This works exceptionally well with Roblox UI, since you can apply the pre-made tags to your UI and watch it animate. Dice Binders handles memory and prevents leaks when you remove a tag or an object with a tag. Who doesn't like being able to tag elements and watch them run right away?
 
 ## Installation
-You can [grab the Roblox model here](https://www.roblox.com/library/5462736550/Dice-Binders). To download from GitHub, [go to this link](https://github.com/Mullets-Gavin/DiceBinders/releases/tag/dicebinder-v1.0) and download the most recent version. Afterwards, place the module into `ReplicatedStorage` so both the client and server can access it.
+You can [grab the Roblox model here](https://www.roblox.com/library/5462736550/Dice-Binders). To download from GitHub, [go to this link](https://github.com/Mullets-Gavin/DiceBinders/releases) and download the most recent version. Afterwards, place the module into `ReplicatedStorage` so both the client and server can access it.
 
 ## Pre-installed Modules
 **User Interface [UI]:**
