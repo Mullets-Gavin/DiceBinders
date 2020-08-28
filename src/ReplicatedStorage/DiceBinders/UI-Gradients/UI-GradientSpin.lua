@@ -27,15 +27,12 @@ return function(object)
 	local logged = 0
 	local event
 	event = Services['RunService'].Heartbeat:Connect(function(dt)
-		if tick() - dt >= rate then
+		logged = logged + dt
+		while logged >= rate do
+			logged = logged - rate
 			local findGradient = object:FindFirstChild('UIGradient')
 			if findGradient then
 				findGradient.Rotation = findGradient.Rotation + Intensity()
-			else
-				logged = logged + 1
-				if logged == 25 then
-					event:Disconnect()
-				end
 			end
 		end
 	end)
