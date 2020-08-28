@@ -10,12 +10,14 @@ Dice Binders is an elegant and easy solution to creating tag-based UI animations
 Dice Binders was created as an easy way to run code with tags. This handles everything you need and keeps the code nice and clean. This works exceptionally well with Roblox UI, since you can apply the pre-made tags to your UI and watch it animate. Dice Binders handles memory and prevents leaks when you remove a tag or an object with a tag. Who doesn't like being able to tag elements and watch them run right away?
 
 ## Installation
-You can [grab the Roblox model here](https://www.roblox.com/library/5462736550/Dice-Binders). To download from GitHub, [go to this link](https://github.com/Mullets-Gavin/DiceBinders/releases/tag/dicebinder-v1.0) and download the most recent version. Afterwards, place the module into `ReplicatedStorage` so both the client and server can access it.
+You can [grab the Roblox model here](https://www.roblox.com/library/5462736550/Dice-Binders). To download from GitHub, [go to this link](https://github.com/Mullets-Gavin/DiceBinders/releases) and download the most recent version. Afterwards, place the module into `ReplicatedStorage` so both the client and server can access it.
 
 ## Pre-installed Modules
 **User Interface [UI]:**
 Over 20+ pre-installed UI Animations you can use for click events, mouse hovering, gradient designs, and more! Check out all of the animations in my test game here:
 https://www.roblox.com/games/5310533136/UI-Animations
+
+*You can change all the UI animations intensity by opening the module and changing the number value!*
 
 **Obby Actions:**
 To showcase my Binders module more, I included 3 Obby modules that you can use to assign tags to parts that kill a player, make the player shoot forward, or even hide the part the player jumps on!
@@ -43,13 +45,24 @@ Shutdown the module and disable all tags and disconnect all events.
 ```
 :ConnectEvents(specific,func) -- specific = object, func = function
 ```
-Connect an object in the first parameter to a tag function in the second parameter.
+Connect an object with the given tag that is a descendant of the `DataModel` to a tag function in the second parameter.  A tag function is the modules that are descendants of DiceBinders with the same name as the tag given that returns a function passed with the parameters of the object to fire and connect events.
+
+*Example:*
+```lua
+DiceBinders:ConnectEvents(workspace.Baseplate,function(object)
+	local event
+	event = object.Touched:Connect(function(hit)
+		print(hit.Name,'touched',object.Name,'!')
+	end)
+	return event
+end)
+```
 
 ### DiceBinders:DisconnectEvents
 ```
 :DisconnectEvents(specific) -- specific = object
 ```
-Disconnect all events tied to an object passed in the function.
+Disconnect all events tied to an object which was or is parented to the `DataModel`, passed in the function `:ConnectEvents`.
 
 ### DiceBinders:DisconnectAllEvents
 ```
